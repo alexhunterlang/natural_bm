@@ -5,10 +5,6 @@ Optimizer class for calculating weight updates.
 In general, this code closely matches keras.optimizers. There is a small
 change in SGD.
 
-## class OrderedDict
-Dictionary that remembers insertion order
-
-
 ## class Optimizer
 Abstract optimizer base class.<br />Note: this is the parent class of all optimizers, not an actual optimizer<br />that can be used for training models.
 ### \_\_init\_\_

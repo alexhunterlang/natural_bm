@@ -1,9 +1,6 @@
 # Documentation for Training (training.py)
 
 Generates statistics needed for training DBMs 
-## class OrderedDict
-Dictionary that remembers insertion order
-
 
 ## class Trainer
 ### \_\_init\_\_
@@ -157,19 +154,4 @@ def pos_stats(self, x)
 
 Generates positive (data dependent) statistics.<br /><br /># Arguments:<br /> ~ x: tensor; input data<br /> ~ <br /># Returns:<br /> ~ prob_data: list; data dependent probabilities
 
-
-
-
-## functions
-
-### merge\_OrderedDicts
-```py
-
-def merge_OrderedDicts(d1, d2)
-
-```
-
-
-
-Merge two OrderedDicts into a new one 
 

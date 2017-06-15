@@ -5,94 +5,6 @@ A model organizes the training of a neural network.
 The general structure, and especial the fit method, are similar to the keras
 Model class.
 
-## class CSVLogger
-Callback that streams epoch results to a csv file.<br />Supports all values that can be represented as a string,<br />including 1D iterables such as np.ndarray.<br /># Example<br />    ```python<br />        csv_logger = CSVLogger('training.log')<br />        model.fit(X_train, Y_train, callbacks=[csv_logger])<br />    ```<br /># Arguments<br />    filename: filename of the csv file, e.g. 'run/log.csv'.<br />    separator: string used to separate elements in the csv file.<br />    append: True: append if file exists (useful for continuing<br />        training). False: overwrite existing file,
-### \_\_init\_\_
-```py
-
-def __init__(self, filename, separator=',', append=False)
-
-```
-
-
-
-Initialize self.  See help(type(self)) for accurate signature.
-
-
-### on\_batch\_begin
-```py
-
-def on_batch_begin(self, batch, logs=None)
-
-```
-
-
-
-### on\_batch\_end
-```py
-
-def on_batch_end(self, batch, logs=None)
-
-```
-
-
-
-### on\_epoch\_begin
-```py
-
-def on_epoch_begin(self, epoch, logs=None)
-
-```
-
-
-
-### on\_epoch\_end
-```py
-
-def on_epoch_end(self, epoch, logs=None)
-
-```
-
-
-
-### on\_train\_begin
-```py
-
-def on_train_begin(self, logs=None)
-
-```
-
-
-
-### on\_train\_end
-```py
-
-def on_train_end(self, logs=None)
-
-```
-
-
-
-### set\_model
-```py
-
-def set_model(self, model)
-
-```
-
-
-
-### set\_params
-```py
-
-def set_params(self, params)
-
-```
-
-
-
-
-
 ## class Model
 Class that handles the training of a neural network 
 ### \_\_init\_\_
@@ -169,16 +81,4 @@ def make_batches(size, batch_size, epoch=None)
 
 
 Returns a list of batch indices (tuples of indices). 
-
-
-### merge\_OrderedDicts
-```py
-
-def merge_OrderedDicts(d1, d2)
-
-```
-
-
-
-Merge two OrderedDicts into a new one 
 

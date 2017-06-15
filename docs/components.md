@@ -72,17 +72,3 @@ Activity of neurons<br /><br /># Arguments:<br /> ~ input_ls: list; activities o
 
 
 
-
-## functions
-
-### dict\_2\_OrderedDict
-```py
-
-def dict_2_OrderedDict(d)
-
-```
-
-
-
-Convert a standard dict to a sorted, OrderedDict 
-

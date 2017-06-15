@@ -1,9 +1,6 @@
 # Documentation for Utils (utils.py)
 
 Utility functions 
-## class OrderedDict
-Dictionary that remembers insertion order
-
 
 ## functions
 

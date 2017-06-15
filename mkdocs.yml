@@ -1,0 +1,24 @@
+site_name: Natural Boltzmann Machines (Natural_BM) Documentation
+pages:
+    - Home: index.md
+    - Backend: backend.md
+    - Callbacks: callbacks.md
+    - Components: components.md
+    - Datasets: datasets.md
+    - DBM: dbm.md
+        - Common: common.md
+        - Fast: fast.md
+        - MNIST: mnist.md
+        - Random: random.md
+        - SVHN: svhn.md
+    - Estimators: estimators.md
+    - Initializers: initializers.md
+    - Models: models.md
+    - Optimizers: optimizers.md
+    - Preprocessing: preprocessing.md
+    - Regularizers: regularizers.md
+    - Samplers: samplers.md
+    - Training: training.md
+    - Utils Testing: utils_testing.md
+    - Utils: utils.md
+theme: readthedocs

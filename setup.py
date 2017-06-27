@@ -8,7 +8,7 @@ setup(name='Natural_BM',
       author='Alex H. Lang',
       author_email='alexhunterlang+natural_bm@gmail.com',
       license='MIT',
-      install_requires=['theano', 'skimage'],
+      install_requires=['theano', 'scikit-image'],
       extras_require={
           'h5py': ['h5py'],
           'tests': ['pytest',

@@ -31,7 +31,7 @@ def run_rbm():
     # parameters    
     batch_size = 100
     n_epoch = 1000 # 1000 for true literature comparison, but 250 should be good
-    results_folder = 'long_demo/'
+    results_folder = 'long_demo'
     
     # needed datasets, standard in field is probability for train, sampled for test    
     data_train = mnist.MNIST('probability')
@@ -65,8 +65,8 @@ def run_rbm():
     model = Model(dbm, optimizer, trainer)
     
     # prepare output paths
-    path = os.path.abspath(__file__)
-    save_folder = '/'.join(path.split('/')[:-2])+'/results/'+results_folder
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    save_folder = os.path.abspath(os.path.join(filepath, '..', 'results', results_folder))
     save_dict = standard_save_folders(save_folder, overwrite=True)
   
     # epochs to monitor

@@ -24,7 +24,7 @@ class MNIST(Dataset):
 
         # Download MNIST probabilities
         # This will also be used to create theshold dataset
-        filename = self.folder + 'mnist.pkl.gz'
+        filename = os.path.join(self.folder, 'mnist.pkl.gz')
         origin = 'http://www.iro.umontreal.ca/~lisa/deep/data/mnist/mnist.pkl.gz'
         print('Downloading MNIST from %s' % origin)
         _ = urllib.request.urlretrieve(origin, filename)

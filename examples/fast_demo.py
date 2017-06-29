@@ -19,7 +19,7 @@ def run_rbm(nnet_type='rbm'):
     # parameters
     batch_size = 100
     n_epoch = 2
-    results_folder = 'fast_demo/'
+    results_folder = 'fast_demo'
     
     # just makes a tiny neural network
     if nnet_type == 'rbm':
@@ -47,8 +47,8 @@ def run_rbm(nnet_type='rbm'):
     model = Model(dbm, optimizer, trainer)
     
     # prepare output paths
-    path = os.path.abspath(__file__)
-    save_folder = '/'.join(path.split('/')[:-2])+'/results/'+results_folder
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    save_folder = os.path.abspath(os.path.join(filepath, '..', 'results', results_folder))
     save_dict = standard_save_folders(save_folder, overwrite=True)
   
     # these callbacks monitor progress

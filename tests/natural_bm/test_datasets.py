@@ -32,10 +32,11 @@ def test_mnist():
     datatype_ls = ['probability', 'sampled', 'threshold']
 
     # delete files if they exist
-    path = os.path.abspath(__file__)
-    folder = '/'.join(path.split('/')[:-3])+'/data/'
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    folder = os.path.abspath(os.path.join(filepath, '..', '..', 'data'))
+    print(folder)
     for datatype in datatype_ls:
-        filename = folder + name + '_' + datatype + '.npz'
+        filename = os.path.join(folder, name + '_' + datatype + '.npz')
         try:
             os.remove(filename)
         except OSError:
@@ -57,10 +58,10 @@ def test_fast():
     datatype_ls = ['probability', 'sampled', 'threshold']
 
     # delete files if they exist
-    path = os.path.abspath(__file__)
-    folder = '/'.join(path.split('/')[:-3])+'/data/'
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    folder = os.path.abspath(os.path.join(filepath, '..', '..', 'data'))
     for datatype in datatype_ls:
-        filename = folder + name + '_' + datatype + '.npz'
+        filename = os.path.join(folder, name + '_' + datatype + '.npz')
         try:
             os.remove(filename)
         except OSError:
@@ -94,17 +95,17 @@ def test_fast():
 def longtest_svhn(__file__):
     """
     This test is internet dependent and requires a large downloand.
-    Since it is slow and I did not include it in auto pytesting.
+    Since it is slow, I did not include it in auto pytesting.
     """
     
     name = 'svhn'
     datatype_ls = ['probability',  'threshold']
 
     # delete files if they exist
-    path = os.path.abspath(__file__)
-    folder = '/'.join(path.split('/')[:-3])+'/data/'
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    folder = os.path.abspath(os.path.join(filepath, '..', '..', 'data'))
     for datatype in datatype_ls:
-        filename = folder + name + '_' + datatype + '.npz'
+        filename = os.path.join(folder, name + '_' + datatype + '.npz')
         try:
             os.remove(filename)
         except OSError:

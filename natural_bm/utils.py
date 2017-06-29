@@ -47,7 +47,7 @@ def standard_save_folders(save_folder, overwrite=True):
     returns a dictionary of the folders
     """
         
-    save_folder = os.path.normpath(save_folder)+'/'
+    save_folder = os.path.normpath(save_folder)
     
     if os.path.exists(save_folder) and not overwrite:
         raise OSError('Folder already exists: {}'.format(save_folder))
@@ -57,24 +57,23 @@ def standard_save_folders(save_folder, overwrite=True):
     try:
         os.mkdir(save_folder)
     except OSError:
-        basefolder = '/'.join(save_folder.split('/')[:-2])
+        basefolder = os.path.abspath(os.path.join(save_folder, '..'))        
         os.mkdir(basefolder)
         os.mkdir(save_folder)
     
     save_dict = {}
     save_dict['base'] = save_folder
+    save_dict['csv'] = os.path.join(save_folder, 'history.txt')
     
-    save_dict['csv'] = save_folder+'history.txt'
-    
-    weight_folder = save_folder+'weights/'
+    weight_folder =  os.path.join(save_folder, 'weights')
     os.mkdir(weight_folder)
-    save_dict['weights'] = weight_folder + 'weights.{epoch:04d}.hdf5'
+    save_dict['weights'] = os.path.join(weight_folder, 'weights.{epoch:04d}.hdf5')
 
-    opt_weights = save_folder+'opt_weights/'
+    opt_weights = os.path.join(save_folder, 'opt_weights')
     os.mkdir(opt_weights)
-    save_dict['opt_weights']  = opt_weights + 'opt_weights.{epoch:04d}.hdf5'
+    save_dict['opt_weights'] = os.path.join(opt_weights, 'opt_weights.{epoch:04d}.hdf5')
     
-    plots = save_folder+'plots/'
+    plots =  os.path.join(save_folder, 'plots')
     os.mkdir(plots)
     save_dict['plots']  = plots
     

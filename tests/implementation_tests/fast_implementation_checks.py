@@ -61,8 +61,8 @@ def train_check():
     n_betas = 10000
     
     # prep the callbacks
-    path = os.path.abspath(__file__)
-    save_folder = '/'.join(path.split('/')[:-3])+'/results/fast_checks/'
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    save_folder = os.path.abspath(os.path.join(filepath, '..', '..', 'results', 'fast_checks'))
     save_dict = standard_save_folders(save_folder, overwrite=True)
     cb_csv = callbacks.CSVLogger(save_dict['csv'], separator='\t')
     cb_ais = callbacks.AISCallback(dbm, n_runs, n_betas, epoch_ls=fixed_ls)

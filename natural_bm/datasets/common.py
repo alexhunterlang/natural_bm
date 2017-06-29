@@ -62,9 +62,9 @@ class Dataset:
         self.name = name
         self.datatype = datatype
 
-        path = os.path.abspath(__file__)
-        self.folder = '/'.join(path.split('/')[:-3])+'/data/'
-        self.savename = self.folder + self.name + '_' + self.datatype
+        filepath = os.path.dirname(os.path.abspath(__file__))  
+        self.folder = os.path.abspath(os.path.join(filepath, '..', '..','data'))
+        self.savename = os.path.join(self.folder, self.name + '_' + self.datatype)
         self.filename = self.savename + '.npz'
 
         self.dataset_dict = self._load()

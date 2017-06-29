@@ -30,7 +30,7 @@ class SVHN(Dataset):
     def _create_probability(self):
         # Prep for the downloads
         dataset_ls = ['train_32x32.mat', 'test_32x32.mat']
-        filename_ls = [self.folder + d for d in dataset_ls]
+        filename_ls = [os.path.join(self.folder, d) for d in dataset_ls]
         url_base = 'http://ufldl.stanford.edu/housenumbers/'
         url_ls = [url_base + d for d in dataset_ls]
 
